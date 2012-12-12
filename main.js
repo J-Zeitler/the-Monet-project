@@ -1,6 +1,10 @@
 var lines = false;
+var birthrate = 0.003
 function toggleLines(){
 	lines = lines ? false : true;
+}
+function changeBirthrate(x){
+	birthrate += (birthrate < 0.1 && birthrate > 0.001) ? x : 0;
 }
 
 function run(){
@@ -46,7 +50,7 @@ function run(){
 			ctx.lineTo(particles[i].x, particles[i].y);
 			ctx.stroke();
 
-			if(particles.length<1000 && Math.random()<0.003){
+			if(particles.length<1000 && Math.random()<birthrate){
 				particles.push(new split(particles[i]));
 			}
 			if(particles[i].x > W || particles[i].x < 0 || particles[i].y > H || particles[i].y < 0){

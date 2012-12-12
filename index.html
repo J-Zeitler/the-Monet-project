@@ -8,7 +8,15 @@
 </head>
 <body>
 	<div id="backboard">
-		<button id="toggle" onclick="toggleLines()">Toggle Lines</button>
+		<div id="info">
+			<p>In this small app we witness the birth of 999 tiny impressionism painters.</p>
+			<div id="buttomwrap"><button id="toggle" onclick="toggleLines()">Toggle Lines</button></div>
+			<p>
+				<i>Birth rate:</i>
+				<button onclick="changeBirthrate(-0.001)">-</button>
+				<button onclick="changeBirthrate(0.001)">+</button>
+			</p>
+		</div>
 		<canvas id="canvas">
 		</canvas>
 	</div>
