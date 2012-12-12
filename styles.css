@@ -1,0 +1,25 @@
+html{
+	font-family: helvetica, arial, sans-serif;
+}
+h1{
+	font-family: georgia;
+	font-style: italic;
+}
+body{
+	margin: 0 auto;
+	overflow: hidden;
+}
+button{
+	position: absolute;
+}
+#toggle{
+	top: 20px;
+	left: 10px;
+}
+.wrapper{
+	width: 720px;
+	margin: 0 auto;
+}
+#backboard{
+	background: #fff;
+}
