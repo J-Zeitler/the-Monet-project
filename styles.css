@@ -26,5 +26,6 @@ body{
 	margin: 0 auto;
 }
 #backboard{
-	background: #fff;
+	background: url('the-shining.png');
+	background-size: cover;
 }

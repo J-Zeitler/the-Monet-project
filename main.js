@@ -1,5 +1,5 @@
-var lines = false;
-var birthrate = 0.003
+var lines = false,
+	birthrate = 0.02;
 function toggleLines(){
 	lines = lines ? false : true;
 }
@@ -15,6 +15,9 @@ function run(){
 	var ctx = canvas.getContext('2d');
 
 	var xOrigin = W/2, yOrigin = H/2;
+	ctx.fillStyle = "white";
+	ctx.fillRect(0, 0, W, H);
+	ctx.globalCompositeOperation = "copy";
 
 	var particles = [];
 
@@ -33,14 +36,16 @@ function run(){
 	}
 
 	function draw(){
-		if(!lines){
-			ctx.fillStyle = "rgba(255, 255, 255, 0.2)";
-			ctx.fillRect(0, 0, W, H);
-		}
+
+		// if(!lines){
+		// 	ctx.fillStyle = "rgba(255, 255, 255, 0.2)";
+		// 	ctx.fillRect(0, 0, W, H);
+		// }
 
 		for(var i=0; i<particles.length; ++i){
 
-			ctx.strokeStyle = particles[i].color;
+			// ctx.strokeStyle = particles[i].color;
+			ctx.strokeStyle = "rgba(0,0,0,0)";
 
 			ctx.beginPath();
 			ctx.globalAlpha = 1.0;
@@ -49,6 +54,9 @@ function run(){
 			particles[i].y = particles[i].y+Math.random()*10-5;
 			ctx.lineTo(particles[i].x, particles[i].y);
 			ctx.stroke();
+			// ctx.clip();
+
+			// ctx.clearRect(0, 0, W, H);
 
 			if(particles.length<1000 && Math.random()<birthrate){
 				particles.push(new split(particles[i]));
@@ -63,8 +71,3 @@ function run(){
 }
 
 window.onload = run;
-
-
-
-
-
