@@ -1,4 +1,6 @@
 the-Monet-project
 =================
 
-A tiny JavaScript colored particle renderer
+A tiny JavaScript/HTML5-canvas colored particle renderer
+
+demo: http://jonaszeitler.se/the-monet-project/
